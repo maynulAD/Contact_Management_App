@@ -1,17 +1,157 @@
-# flutter__contact_application
+# Contact Management App
 
-A new Flutter project.
+## Project Overview
 
-## Getting Started
+The **Contact Management App** is a Flutter application designed to manage personal contacts using a local SQLite database.
 
-This project is a starting point for a Flutter application.
+The application provides basic CRUD operations along with contact search and favorite management.
 
-A few resources to get you started if this is your first Flutter project:
+## Project Details
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+**Project Name:** Contact Management App
+**Platform:** Flutter
+**Programming Language:** Dart
+**Database:** SQLite
+**Database Package:** `sqflite`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Main Features
+
+* Add new contacts
+* View saved contacts
+* Update contact information
+* Delete contacts
+* Search contacts by name
+* Mark contacts as favorites
+* View favorite contacts
+* Store contact information locally
+
+## Contact Information
+
+Each contact contains:
+
+
+Contact
+│
+├── ID
+├── Name
+├── Phone Number
+├── Email
+├── Address
+└── Favorite Status
+
+
+**Name** and **Phone Number** are required fields.
+
+**Email** and **Address** can be optional.
+
+## Application Flow
+
+
+                    Contact Management App
+                              │
+              ┌───────────────┼───────────────┐
+              │               │               │
+           Contacts        Search         Favorites
+              │               │               │
+       ┌──────┼──────┐        │          Favorite List
+       │      │      │        │
+      Add   View   Details    │
+       │      │      │        │
+       │      │   ┌──┴───┐    │
+       │      │   │      │    │
+       │      │  Edit  Delete │
+       │      │               │
+       └──────┴───────────────┘
+                      │
+                 SQLite Database
+
+
+## Database Structure
+
+
+contacts
+│
+├── id
+│   └── INTEGER PRIMARY KEY AUTOINCREMENT
+│
+├── name
+│   └── TEXT NOT NULL
+│
+├── phone
+│   └── TEXT NOT NULL
+│
+├── email
+│   └── TEXT
+│
+├── address
+│   └── TEXT
+│
+└── isFavorite
+    └── INTEGER
+
+
+## CRUD Operations
+
+
+CREATE
+  ↓
+Add Contact
+  ↓
+SQLite Database
+
+READ
+  ↓
+View Contacts
+  ↓
+Search / Favorites
+
+UPDATE
+  ↓
+Edit Contact
+  ↓
+Update SQLite Record
+
+DELETE
+  ↓
+Delete Contact
+  ↓
+Remove SQLite Record
+
+
+## Project Architecture
+
+lib/
+│
+├── database/
+│   └── database_helper.dart
+│
+├── models/
+│   └── contact.dart
+│
+├── screens/
+│   ├── home_screen.dart
+│   ├── add_edit_contact_screen.dart
+│   ├── contact_details_screen.dart
+│   ├── favorites_screen.dart
+│   └── settings_screen.dart
+│
+├── widgets/
+│   └── contact_avatar.dart
+│
+└── main.dart
+
+
+## Technologies
+
+* Flutter
+* Dart
+* SQLite
+* `sqflite`
+* `path`
+* Material Design
+
+## Author
+
+**Md Gazi Maynul Hassan Moin**
+
+**Project:** Flutter Contact Management App
